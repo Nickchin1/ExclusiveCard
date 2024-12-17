@@ -1,0 +1,169 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #ffffff;
+    color: white;
+}
+
+/* Container principal */
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Títulos */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Informações com ícones */
+.info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    border-radius: 10px 20px 30px;
+    background-color: black;
+    padding: 20px;
+}
+
+.icone-img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Parcerias */
+.parcerias {
+    margin: 20px 0;
+}
+
+.parcerias p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.imagem {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botões */
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.btn {
+    background-color: #000000;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #e69b3c;
+}
+
+.btn-solicite {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-acompanhe {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contato */
+.contato {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.icone-contato {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icone-contato img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.icone-contato p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilo para o pop-out */
+.popout {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.popout.active {
+    display: block;
+}
+
+.popout-content {
+    text-align: center;
+}
+
+.popout-content button {
+    background-color: #ffaa44;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.popout-content button:hover {
+    background-color: #e69b3c;
+    transition: 0.3s;
+}

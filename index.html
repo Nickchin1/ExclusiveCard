@@ -1,151 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExclusiveCard</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ccffcc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            text-align: center;
-            max-width: 800px;
-            width: 100%;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .header {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .subheader {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        .info div {
-            flex: 1;
-            text-align: center;
-        }
-
-        .info div img {
-            width: 70px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .partnerships {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .partnerships img {
-            width: 49%; /* Reduzi para 70% do tamanho original */
-            max-width: 280px;
-            height: auto;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-        }
-
-        .buttons {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .buttons a {
-            text-decoration: none;
-            background: #ffcc66;
-            color: #333;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .buttons a:hover {
-            background: #ffaa33;
-        }
-
-        .contacts {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .contacts div {
-            text-align: center;
-        }
-
-        .contacts div img {
-            width: 40px;
-            height: auto;
-        }
-    </style>
+    <title>UFDCard</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="java.js" defer></script>
 </head>
+
 <body>
     <div class="container">
-        <div class="header">UFDCard</div>
-        <div class="subheader">Servidor concursado, conheça o cartão exclusivo pra você</div>
+        <h1>UFDCard</h1>
+        <h2>Servidor concursado, conheça o cartão exclusivo pra você</h2>
 
+        <!-- Seção Informativa -->
         <div class="info">
-            <div>
-                <img src="imagens/mão.jpg" alt="Ícone de cartão na mão">
+            <div class="cartao" onclick="showPopout('cartao')">
                 <p>O que é o cartão consignado?</p>
-            </div>  
-            <div>
-                <img src="imagens/Imagem do WhatsApp de 2024-12-11 à(s) 20.38.50_e3c98b01.jpg" alt="Ícone de taxa baixa">
+                <img src="./imagens/mão.png" alt="Cartão" class="icone-img">
+            </div>
+            <div class="juros" onclick="showPopout('juros')">
                 <p>Menor Taxa de juros</p>
+                <img src="./imagens/juros.png" alt="Juros" class="icone-img">
+            </div>
+            <div class="parcerias" onclick="showPopout('parcerias')">
+                <p>Conheça as parcerias do seu cartão benefício</p>
+                <img src="./imagens/bene (2).png" alt="Benefícios" class="icone-img">
             </div>
         </div>
 
-        <div class="partnerships">
-            <p>Conheça as parcerias do seu cartão benefício</p>
-            <img src="imagens/Conheça as parcerias do seu cartão benefício.png" alt="Imagem das parcerias">
+        <!-- Seção de Parcerias -->
+        <div class="Cartão">
+            <div class="imagem" onclick="showPopout('cartao')">
+                <img src="./imagens/Cartao.png" alt="Cartão" class="img-parceria">
+            </div>
         </div>
 
-        <div class="buttons">
-            <a href="#">SOLICITE JÁ O SEU</a>
-            <a href="#">ACOMPANHAR SOLICITAÇÃO</a>
+        <!-- Botões com links de redirecionamento -->
+        <div class="botoes">
+            <a href="./formulario.html" class="btn btn-solicite">SOLICITE JÁ O SEU</a>
+            <a href="./solicitacao.html" class="btn btn-acompanhe">ACOMPANHAR SOLICITAÇÃO</a>
         </div>
 
-        <div class="contacts">
-            <div>
-                <img src="./imagens/download.png" alt="WhatsApp">
-                
+        <!-- Contato -->
+        <div class="contato">
+            <div class="icone-contato">
+                <a href="https://wa.me/1234567890" target="_blank">
+                    <img src="./imagens/zap.jpg" alt="WhatsApp">
+                    <p>WHATSAPP</p>
+                </a>
             </div>
-            <div>
-                <img src="./imagens/2111463.png" alt="Instagram">
+            <div class="icone-contato">
+                <a href="https://www.instagram.com/seu_instagram" target="_blank">
+                    <img src="./imagens/insta.jpg" alt="Instagram">
+                    <p>INSTAGRAM</p>
+                </a>
             </div>
+            <div class="icone-contato">
+                <a href="mailto:contato@ufdcard.com" target="_blank">
+                    <img src="./imagens/mail.jpg" alt="Email">
+                    <p>EMAIL</p>
+                </a>
+            </div>
+            <div class="icone-contato">
+                <a href="https://www.sac.ufdcard.com" target="_blank">
+                    <img src="./imagens/sac.jpg" alt="SAC">
+                    <p>SAC</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-out -->
+    <div id="popout" class="popout">
+        <div class="popout-content">
+            <p id="popout-text"></p>
+            <button onclick="closePopout()">Fechar</button>
         </div>
     </div>
 </body>

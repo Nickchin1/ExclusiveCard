@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pedido</title>
+    <style>
+        /* Reset de estilo */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .btn-submit {
+            background-color: #ffa500;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #ff8c00;
+        }
+
+        .response-message {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #28a745;
+        }
+
+        .status {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .status span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="header">Login</div>
+        
+        <form id="loginForm">
+            <!-- Nome de usuário -->
+            <label for="username">Nome de usuário:</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário" required>
+
+            <!-- Senha -->
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+
+            <button type="submit" class="btn-submit">Login</button>
+        </form>
+
+        <!-- Mensagem após login -->
+        <div id="responseMessage" class="response-message">
+            <div class="status">
+                <span>Pedido realizado:</span> 01/12/2024
+            </div>
+            <div class="status">
+                <span>Em transporte:</span> 05/12/2024
+            </div>
+            <div class="status">
+                <span>Entregue:</span> 05/12/2024
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Função para verificar login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Valores de login válidos
+            const validUsername = "Nickolas Ferreira";
+            const validPassword = "123456";
+
+            // Obtendo valores inseridos
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Verificando se os dados estão corretos
+            if (username === validUsername && password === validPassword) {
+                // Exibe a mensagem de pedido
+                document.getElementById('responseMessage').style.display = 'block';
+            } else {
+                // Exibe um alerta caso os dados estejam incorretos
+                alert('Nome de usuário ou senha inválidos.');
+            }
+        });
+    </script>
+
+</body>
+</html>

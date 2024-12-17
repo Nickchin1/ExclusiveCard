@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <style>
+        /* Reset de estilo */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"] {
+            margin-bottom: 10px;
+        }
+
+        input:focus {
+            border-color: #2d9cdb;
+        }
+
+        .btn-submit {
+            background-color: #ffa500;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            background-color: #ff8c00;
+        }
+
+        .response-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+            text-align: center;
+            display: none;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">Formulário de Contato</div>
+
+        <form id="contactForm">
+            <!-- Nome -->
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="form-group">
+                <label for="whatsapp">WhatsApp:</label>
+                <input type="tel" id="whatsapp" name="whatsapp" required>
+            </div>
+
+            <!-- Telefone Fixo -->
+            <div class="form-group">
+                <label for="landline">Telefone Fixo:</label>
+                <input type="tel" id="landline" name="landline" required>
+            </div>
+
+            <!-- Solicitação de Margem Consignável -->
+            <div class="form-group">
+                <label for="margem">Solicitação de Margem Consignável:</label>
+                <input type="text" id="margem" name="margem" placeholder="Digite o valor da margem" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+
+        <!-- Mensagem após envio -->
+        <div id="responseMessage" class="response-message">
+            Nosso consultor entrará em contato logo mais.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Verifica se todos os campos estão preenchidos
+            let formElements = document.querySelectorAll('input');
+            let allFilled = true;
+            formElements.forEach(function(input) {
+                if (input.value === '') {
+                    allFilled = false;
+                }
+            });
+
+            // Exibe a mensagem de sucesso se todos os campos foram preenchidos
+            if (allFilled) {
+                document.getElementById('responseMessage').style.display = 'block';
+                document.getElementById('contactForm').reset(); // Reseta o formulário após o envio
+            }
+        });
+    </script>
+
+</body>
+</html>
